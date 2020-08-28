@@ -47,7 +47,7 @@
                     </button>
 
                     <!-- lOGO TEXT HERE -->
-                    <a href="index.html" class="navbar-brand">Bharat Covid Fact Check</a>
+                    <a href="#home" class="navbar-brand">Bharat Covid Fact Check</a>
                </div>
 
                <!-- MENU LINKS -->
@@ -91,16 +91,21 @@
                            <form action="upload" method="post" enctype="multipart/form-data" class="online-form">
                             {% csrf_token %}
                             <input type="file" name="document" accept = "image/*" required class="form-control">
-                            <p><p><button type="submit" class="form-control">Upload File</button>
+                            <p><p><button type="submit" class="form-control" onclick="myFunction()">Upload File</button>
                             </form>
                             {% if name %}
                             <h3><font color = aqua>File Uploaded Successfully</h3></font>
-                            {% endif %}
                             <form action="checking" method="post" class="online-form">
                             {% csrf_token %}
                             {{data_external}}<br><br>
                             <h3><font color=aqua>{{data2}}</font></h3>
                             <p><p><button type="submit" class="form-control" value="Check">Check News From Image</button></p>
+                            </form>
+                            {% endif %}
+                             <form action="checking" method="post" class="online-form">
+                            {% csrf_token %}
+                            {{data_external}}<br><br>
+                            <h3><font color=aqua>{{data2}}</font></h3>
                             </form>
                          </div>
                     </div>
@@ -357,6 +362,7 @@
      <script src="{% static 'js/owl.carousel.min.js'%}"></script>
      <script src="{% static 'js/smoothscroll.js'%}"></script>
      <script src="{% static 'js/custom.js'%}"></script>
+
 
      
 
